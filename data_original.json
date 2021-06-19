@@ -1,0 +1,91 @@
+{
+    "data": [
+      {
+        "doctors": [
+          {
+            "id": 1,
+            "name": "Jeff Anderson"
+          },
+          {
+            "id": 2,
+            "name": "Pat Smith"
+          },
+          {
+            "id": 3,
+            "name": "Jane Johnston"
+          }
+        ],
+        "patients": [
+          {
+            "id": 1,
+            "name": "Alan Mckenzie"
+          },
+          {
+            "id": 2,
+            "name": "Robert Kidman"
+          },
+          {
+            "id": 3,
+            "name": "Jackie Hart"
+          }
+        ],
+        "visits": [
+          {
+            "doctorid": 1,
+            "patientid": 1,
+            "date": "Dec 1, 2019"
+          },
+          {
+            "doctorid": 2,
+            "patientid": 3,
+            "date": "Jan 12, 2020"
+          },
+          {
+            "doctorid": 3,
+            "patientid": 2,
+            "date": "Jun 9th 2021"
+          }
+        ],
+        "hospitals": [
+          {
+            "id": 1,
+            "doctors": [
+              {
+                "id": 1,
+                "name": "Jeff Anderson"
+              },
+              {
+                "id": 2,
+                "name": "Pat Smith"
+              }
+            ],
+            "patients": [
+              {
+                "id": 1,
+                "name": "Alan Mckenzie"
+              },
+              {
+                "id": 3,
+                "name": "Jackie Hart"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "doctors": [
+              {
+                "id": 3,
+                "name": "Jane Johnston"
+              }
+            ],
+            "patients": [
+              {
+                "id": 2,
+                "name": "Robert Kidman"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
