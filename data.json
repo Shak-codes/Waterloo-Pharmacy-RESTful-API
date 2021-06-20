@@ -1,20 +1,7 @@
 {
     "data": [
         {
-            "doctors": [
-                {
-                    "id": 1,
-                    "name": "Jeff Anderson"
-                },
-                {
-                    "id": 2,
-                    "name": "Pat Smith"
-                },
-                {
-                    "id": 3,
-                    "name": "Jane Johnston"
-                }
-            ],
+            "doctors": [],
             "patients": [
                 {
                     "id": 1,

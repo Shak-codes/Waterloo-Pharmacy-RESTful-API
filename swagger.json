@@ -10,7 +10,7 @@
     ],
     "basePath": "/api/v1",
     "paths": {
-      "/doctors": {
+      "/doctor/all": {
         "get": {
           "summary": "Get all doctors",
           "description": "Retrieves the list of doctors",
@@ -26,6 +26,23 @@
             }
           }
         },
+        "delete": {
+          "summary": "Delete all Doctors",
+          "description": "Deletes all doctors from the database",
+          "responses": {
+            "200": {
+              "description": "The empty list of doctors after deletion",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Doctor"
+                }
+              }
+            }
+          }
+        }
+      },
+      "/doctor": {
         "post": {
           "summary": "Create a doctor",
           "parameters": [
@@ -51,7 +68,7 @@
           }
         }
       },
-      "/doctors/{id}": {
+      "/doctor/{id}": {
         "get": {
           "parameters": [
             {
@@ -71,9 +88,32 @@
               }
             }
           }
+        },
+        "delete": {
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "type": "integer",
+              "required": true
+            }
+          ],
+          "summary": "Delete a single doctor",
+          "description": "Delete doctor by id",
+          "responses": {
+            "200": {
+              "description": "Remaining Doctors",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Doctor"
+                }
+              }
+            }
+          }
         }
       },
-      "/patients": {
+      "/patient/all": {
         "get": {
           "summary": "Get all patients",
           "description": "Retrieves the list of patients",
@@ -88,7 +128,9 @@
               }
             }
           }
-        },
+        }
+      },
+      "/patient": {
         "post": {
           "summary": "Create a patient",
           "parameters": [
@@ -114,7 +156,7 @@
           }
         }
       },
-      "/patients/{id}": {
+      "/patient/{id}": {
         "get": {
           "parameters": [
             {
