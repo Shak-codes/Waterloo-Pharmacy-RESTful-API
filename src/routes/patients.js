@@ -18,6 +18,8 @@ router
 
     // Delete All Patients Endpoint
     .delete((req, res) => {
+        let response = apiData.data[0].patients;
+
         apiData.data[0].patients = [];
 
         const data = JSON.stringify(apiData, null, 4);
@@ -30,7 +32,7 @@ router
             console.log("Done writing"); // Success
         });
     
-        res.json(apiData.data[0].patients).status(200);
+        res.json(response).status(200);
     });
 
 
@@ -43,6 +45,7 @@ router
         const patient_data = apiData.data[0].patients;
 
         const id = patient_data.length + 1;
+
         const body = {
             id,
             ...req.body
@@ -51,7 +54,7 @@ router
     
         const data = JSON.stringify(apiData, null, 4);
     
-        res.json(apiData.data[0].patients).status(200);
+        res.json(body).status(200);
     
         fs.writeFileSync("data.json", data, err => {
             
@@ -107,7 +110,7 @@ router
             console.log("Done writing"); // Success
         });
     
-        res.json(apiData.data[0].patients).status(200);
+        res.json(response).status(200);
     });
 
 

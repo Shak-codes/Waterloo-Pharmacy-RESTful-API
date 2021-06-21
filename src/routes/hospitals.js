@@ -18,6 +18,8 @@ router
 
     // Delete all Hospitals
     .delete((req, res) => {
+        let response = apiData.data[0].hospitals;
+
         apiData.data[0].hospitals = [];
 
         const data = JSON.stringify(apiData, null, 4);
@@ -30,7 +32,7 @@ router
             console.log("Done writing"); // Success
         });
     
-        res.json(apiData.data[0].hospitals).status(200);
+        res.json(response).status(200);
     });
 
 
@@ -43,15 +45,16 @@ router
         const hospital_data = apiData.data[0].hospitals;
 
         const id = hospital_data.length + 1;
+
         const body = {
             id,
             ...req.body
         };
+
         apiData.data[0].hospitals.push(body);
     
         const data = JSON.stringify(apiData, null, 4);
-    
-        res.json(apiData.data[0].hospitals).status(200);
+
     
         fs.writeFileSync("data.json", data, err => {
             
@@ -60,6 +63,8 @@ router
             
             console.log("Done writing"); // Success
         });
+
+        res.json(body).status(200);
     });
 
 
@@ -108,7 +113,7 @@ router
             console.log("Done writing"); // Success
         });
     
-        res.json(apiData.data[0].hospitals).status(200);
+        res.json(response).status(200);
     });
 
 

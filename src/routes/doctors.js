@@ -21,6 +21,8 @@ router
 
     // Delete All Doctors Endpoint
     .delete((req, res) => {
+        let response = apiData.data[0].doctors;
+
         apiData.data[0].doctors = [];
 
         const data = JSON.stringify(apiData, null, 4);
@@ -33,7 +35,7 @@ router
             console.log("Done writing"); // Success
         });
     
-        res.json(apiData.data[0].doctors).status(200);
+        res.json(response).status(200);
     });
 
 
@@ -66,7 +68,7 @@ router
             console.log("Done writing"); // Success
         });
     
-        res.json(apiData.data[0].doctors).status(200);
+        res.json(body).status(200);
     });
 
 
@@ -117,7 +119,7 @@ router
             console.log("Done writing"); // Success
         });
     
-        res.json(apiData.data[0].doctors).status(200);
+        res.json(response).status(200);
     })
 
 // UPDATE DOCTOR LIST ID AFTER DELETION OF AN INDIVIDUAL DOCTOR
